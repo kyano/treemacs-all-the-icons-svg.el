@@ -34,16 +34,16 @@
 (require 'treemacs)
 
 ;; FIXME: `foreground-color' should not be the fixed value.
-(defface hidden-face
+(defface atis/hidden-face
   `((t :foreground ,(face-background 'default)))
   "Face used for the dummy spaces.")
 
 ;; FIXME: To get proper align, it draws useless hidden `chevron-right' characters.
 ;; If the formatted string is started with whitespaces(` ' or `\t'), the SVG icons are not drawn.
-(defconst padding-char-left
+(defconst atis/padding-char-left
   (all-the-icons-octicons "chevron-right"
-                          :face 'hidden-face))
-(defconst padding-char-right "\t")
+                          :face 'atis/hidden-face))
+(defconst atis/padding-char-right "\t")
 
 (treemacs-create-theme "all-the-icons-svg"
   :config
@@ -53,332 +53,332 @@
             (extensions (list (nth 0 item))))
         (treemacs-create-icon
          :icon (format "%s%s%s"
-                       padding-char-left
+                       atis/padding-char-left
                        (all-the-icons-icon-for-file (format "filename.%s" extension))
-                       padding-char-right)
+                       atis/padding-char-right)
          :extensions extensions
          :fallback 'same-as-icon)))
 
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "LICENSE")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("license" "copying")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "readme")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("readme" "readme.org" "readme.md" "readme.rst" "readme.txt")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "Makefile")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("makefile")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "go.mod")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("go.mod" "go.sum")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "package.json")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("package.json")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "filename.sh")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("bash" "csh" "profile")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "filename.bashrc")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("bash_logout")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-devopicons "vim")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("vimrc")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-devopicons "git")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("gitignore" "gitconfig")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "filename.key")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("netrc")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "documents" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("docs-open" "documents-open" "문서-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "documents" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("docs-closed" "documents-closed" "문서-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "code" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("src-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "code" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("src-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "desktop" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("desktop-open" "바탕화면-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "desktop" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("desktop-closed" "바탕화면-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "download" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("download-open" "downloads-open" "다운로드-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "download" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("download-closed" "downloads-closed" "다운로드-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "movies" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("movies-open" "비디오-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "movies" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("movies-closed" "비디오-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "music" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("music-open" "음악-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "music" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("music-closed" "음악-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "photos" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("photos-open" "사진-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "photos" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("photos-closed" "사진-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "pictures" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("pictures-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "pictures" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("pictures-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "workspace" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("workspace-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "workspace" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("workspace-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir ".git" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("git-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir ".git" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("git-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "trash" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("trash-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "trash" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("trash-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "dropbox" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("dropbox-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "dropbox" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("dropbox-closed")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-devopicons "onedrive" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("onedrive-open")
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-devopicons "onedrive" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions ("onedrive-closed")
      :fallback 'same-as-icon)
 
     (treemacs-create-icon
      :icon (format "%s%s"
                    (all-the-icons-octicons "repo" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (root-open root-closed)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "dirname" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (dir-open)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-icon-for-dir "dirname" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (dir-closed)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "filename")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (fallback)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
                    (all-the-icons-octicons "package" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (tag-open)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-right" :face 'dired-directory)
                    (all-the-icons-octicons "package" :face 'dired-directory)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (tag-closed)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-octicons "tag")
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (tag-leaf)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-octicons "flame" :face 'all-the-icons-red)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (error)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-octicons "stop" :face 'all-the-icons-yellow)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (warning)
      :fallback 'same-as-icon)
     (treemacs-create-icon
      :icon (format "%s%s%s"
-                   padding-char-left
+                   atis/padding-char-left
                    (all-the-icons-octicons "info" :face 'all-the-icons-blue)
-                   padding-char-right)
+                   atis/padding-char-right)
      :extensions (info)
      :fallback 'same-as-icon)))
 
