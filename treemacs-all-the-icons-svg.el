@@ -97,6 +97,20 @@
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    atis/padding-char-left
+                   (all-the-icons-icon-for-file "package.lock.json")
+                   atis/padding-char-right)
+     :extensions ("package-lock.json")
+     :fallback 'same-as-icon)
+    (treemacs-create-icon
+     :icon (format "%s%s%s"
+                   atis/padding-char-left
+                   (all-the-icons-icon-for-file "eslint")
+                   atis/padding-char-right)
+     :extensions (".eslintrc.json")
+     :fallback 'same-as-icon)
+    (treemacs-create-icon
+     :icon (format "%s%s%s"
+                   atis/padding-char-left
                    (all-the-icons-icon-for-file "filename.sh")
                    atis/padding-char-right)
      :extensions ("bash" "csh" "profile")
@@ -129,6 +143,7 @@
                    atis/padding-char-right)
      :extensions ("netrc")
      :fallback 'same-as-icon)
+
     (treemacs-create-icon
      :icon (format "%s%s%s"
                    (all-the-icons-octicons "chevron-down" :face 'dired-directory)
