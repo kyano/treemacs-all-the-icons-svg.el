@@ -165,14 +165,25 @@ directories list."
     (tatis/icons-for-directory '("documents" "docs" "documents" "문서"))
     (tatis/icons-for-directory '("download" "download" "downloads" "다운로드"))
     (tatis/icons-for-directory '("dropbox" "dropbox"))
-    (tatis/icons-for-directory '("movies" "movies" "비디오"))
+    (tatis/icons-for-directory '("movies" "movies" "videos" "비디오"))
     (tatis/icons-for-directory '("music" "music" "음악"))
     (tatis/icons-for-directory '("photos" "photos" "사진"))
     (tatis/icons-for-directory '("pictures" "pictures"))
     (tatis/icons-for-directory '("test" "test"))
     (tatis/icons-for-directory '("trash" "trash"))
     (tatis/icons-for-directory '("workspace" "workspace"))
-    (tatis/icons-for-directory '("onedrive" "onedrive"))
+    (treemacs-create-icon
+     :icon (tatis/icon-with-chevron "down" "onedrive"
+                                    #'all-the-icons-devopicons
+                                    'dired-directory)
+     :extensions ("onedrive-open")
+     :fallback 'same-as-icon)
+    (treemacs-create-icon
+     :icon (tatis/icon-with-chevron "right" "onedrive"
+                                    #'all-the-icons-devopicons
+                                    'dired-directory)
+     :extensions ("onedrive-closed")
+     :fallback 'same-as-icon)
     (tatis/icons-for-directory '(".git" "git"))
 
     ;; Treemacs-specific
