@@ -44,7 +44,7 @@
 ;; If the formatted string is started with whitespaces(` ' or `\t'), the SVG icons are not drawn.
 (defconst tatis/padding-char-left
   (all-the-icons-octicons "chevron-right" :face 'tatis/hidden-face))
-(defconst tatis/padding-char-right "\t")
+(defconst tatis/padding-char-right "  ")
 
 (defun tatis/icon-with-padding (name &optional fn &rest rest-arg)
   "Icon of NAME with left and right paddings.
