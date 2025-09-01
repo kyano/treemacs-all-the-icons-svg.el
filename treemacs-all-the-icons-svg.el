@@ -118,13 +118,11 @@ directories list."
          :icon (tatis/icon-with-padding (concat "filename." extension))
          :extensions extensions
          :fallback 'same-as-icon)))
-    (dolist (suffix '("spec.js" "spec.jsx" "spec.ts" "test.js" "test.jsx" "test.ts"
-                      "Brewfile"
-                      "Makefile" "CMakeCache.txt" "CMakeLists.txt"
-                      "LICENSE" "TAGS" "TODO"
-                      "README" "README.org" "README.md" "README.rst" "README.txt"
-                      "go.mod" "go.work"
-                      "package.json" "package.lock.json" ".npmignore"))
+    (dolist (suffix '("spec.js" "spec.jsx" "spec.ts" "test.js" "test.jsx" "test.ts" ".npmignore" "Brewfile"
+                      "CMakeCache.txt" "CMakeLists.txt" "Gemfile" "Gemfile.lock" "LICENSE" "Makefile" "TAGS" "TODO"
+                      "bower.json" "go.mod" "go.sum" "go.work" "meson.build" "meson_options.txt" "mix.lock"
+                      "package.json" "package.lock.json" "README" "README.org" "README.md" "README.rst" "README.txt"
+                      "serverless.yml" "spec.rb" "spec_heeler.rb" "test.rb" "test_helper.rb" "apache" "nginx" "~"))
       (let ((extensions (list (downcase suffix))))
         (treemacs-create-icon
          :icon (tatis/icon-with-padding suffix)
@@ -136,14 +134,7 @@ directories list."
     (tatis/icons-for-file '("package.lock.json" "package-lock.json"))
     (tatis/icons-for-file '("filename.sh" "profile"))
     (tatis/icons-for-file '("filename.bashrc" "bash" "bash_logout"))
-    (treemacs-create-icon
-     :icon (tatis/icon-with-padding "vim"
-                                    #'all-the-icons-devopicons
-                                    :face 'all-the-icons-dsilver)
-     :extensions ("vimrc")
-     :fallback 'same-as-icon)
     (tatis/icons-for-file '("filename.key" "netrc"))
-    (tatis/icons-for-file '("go.mod" "go.sum"))
 
     ;; directories
     (treemacs-create-icon
@@ -165,6 +156,7 @@ directories list."
     (tatis/icons-for-directory '("documents" "docs" "documents" "문서"))
     (tatis/icons-for-directory '("download" "download" "downloads" "다운로드"))
     (tatis/icons-for-directory '("dropbox" "dropbox"))
+    (tatis/icons-for-directory '("onedrive" "onedrive"))
     (tatis/icons-for-directory '("movies" "movies" "videos" "비디오"))
     (tatis/icons-for-directory '("music" "music" "음악"))
     (tatis/icons-for-directory '("photos" "photos" "사진"))
@@ -172,18 +164,6 @@ directories list."
     (tatis/icons-for-directory '("test" "test"))
     (tatis/icons-for-directory '("trash" "trash"))
     (tatis/icons-for-directory '("workspace" "workspace"))
-    (treemacs-create-icon
-     :icon (tatis/icon-with-chevron "down" "onedrive"
-                                    #'all-the-icons-devopicons
-                                    'dired-directory)
-     :extensions ("onedrive-open")
-     :fallback 'same-as-icon)
-    (treemacs-create-icon
-     :icon (tatis/icon-with-chevron "right" "onedrive"
-                                    #'all-the-icons-devopicons
-                                    'dired-directory)
-     :extensions ("onedrive-closed")
-     :fallback 'same-as-icon)
     (tatis/icons-for-directory '(".git" "git"))
 
     ;; Treemacs-specific
